@@ -15,7 +15,7 @@ const FEE_B2B = parseFloat(process.env.FEE_B2B || '0.8') / 100;
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // M-Pesa sends transaction data here
-app.post('/mpesa/callback', async (req, res) => {
+app.post('/payment/callback', async (req, res) => {
   try {
     const body = req.body;
     const transType = body.TransactionType || 'C2B';
